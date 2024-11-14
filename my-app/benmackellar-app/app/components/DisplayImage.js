@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 function DisplayImage({ imageUrl }) {
-  console.log(imageUrl);
   return (
     <Image
       className="p-5 object-fill"

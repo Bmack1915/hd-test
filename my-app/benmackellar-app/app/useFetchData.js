@@ -2,6 +2,7 @@
 import { getData } from "@/lib/api";
 import { useEffect, useState } from "react";
 
+// Custom hook to fetch data from the server for the client
 const useFetchData = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);

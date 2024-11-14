@@ -1,9 +1,9 @@
 "use client";
 
-import ArticleCard from "./components/ArticleCard";
 import ArticlePanel from "./components/ArticlePanel";
 import DisplayImage from "./components/DisplayImage";
 import HomepageDescription from "./components/HomepageDescription";
+import Loading from "./components/Loading";
 import NewsPanel from "./components/NewsPanel";
 import Title from "./components/Title";
 import { useData } from "./DataProvider";
@@ -11,7 +11,7 @@ import { useData } from "./DataProvider";
 function Home() {
   const { data, isLoading, error } = useData();
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Loading />;
 
   if (error) return <div>Error: {error}</div>;
 

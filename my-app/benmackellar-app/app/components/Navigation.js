@@ -23,7 +23,8 @@ function Navigation() {
       {/* Logo */}
       <h1 className={`${abril.className} text-6xl font-extrabold`}>W.</h1>
 
-      <div className="font-inter  flex justify-between space-x-24">
+      {/* Navigation Links */}
+      <div className="flex justify-between space-x-24">
         {data.navItems.map((navItem, index) => (
           <Link
             key={index}
