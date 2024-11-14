@@ -2,6 +2,7 @@
 
 import axios from "axios";
 
+// Server side function to fetch data from the server.
 export async function getData() {
   try {
     const response = await axios.get("http://localhost:3002/data");

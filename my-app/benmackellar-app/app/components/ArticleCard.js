@@ -1,13 +1,12 @@
 import Image from "next/image";
 
 function ArticleCard({ article, articleId }) {
-  console.log(article);
   return (
     <div className="flex m-1">
       <div>
         <Image
           src={article.imageUrl}
-          alt="A person working on a laptop"
+          alt={article.title}
           width={150}
           height={100}
         />
@@ -16,9 +15,9 @@ function ArticleCard({ article, articleId }) {
         <p className="text-primary-red text-4xl pb-2 font-bold">
           0{articleId + 1}
         </p>
-        <header className="text-neutral-very-dark-blue  text-xl font-bold">
+        <button className="text-neutral-very-dark-blue text-left hover:text-primary-red  text-xl font-bold">
           {article.title}
-        </header>
+        </button>
         <p className="text-lg text-neutral-grayish-blue">
           {article.description}
         </p>
