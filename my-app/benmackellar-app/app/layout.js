@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navigation from "./components/Navigation";
 import { Inter } from "next/font/google";
+import { DataProvider } from "./DataProvider";
 
 const inter = Inter({ subsets: ["latin"], weights: ["400", "700", "800"] });
 
@@ -13,8 +14,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navigation />
-        {children}
+        <DataProvider>
+          <Navigation />
+          {children}
+        </DataProvider>
       </body>
     </html>
   );

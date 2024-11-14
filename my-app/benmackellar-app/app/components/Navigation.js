@@ -1,29 +1,26 @@
+"use client";
 import Link from "next/link";
+import { useData } from "../DataProvider";
 
 function Navigation() {
+  const { data, isLoading, error } = useData();
+
+  if (isLoading) return <div>Loading...</div>;
+
   return (
     <div className="m-5 p-5 flex justify-between">
       {/* Logo */}
       <h1 className="text-6xl">W.</h1>
 
-      {/* Links */}
-      <div className=" text-neutral-dark-grayish-blue py-5 space-x-16">
-        <Link className="hover:text-primary-orange" href="/">
-          Home
+      {data.navItems.map((navItem, index) => (
+        <Link
+          key={index}
+          className="hover:text-primary-orange"
+          href={`${navItem.url}`}
+        >
+          {navItem.name}
         </Link>
-        <Link className="hover:text-primary-orange" href="/new">
-          New
-        </Link>
-        <Link className="hover:text-primary-orange" href="/popular">
-          Popular
-        </Link>
-        <Link className="hover:text-primary-orange" href="/trending">
-          Trending
-        </Link>
-        <Link className="hover:text-primary-orange" href="/categories">
-          Categories
-        </Link>
-      </div>
+      ))}
     </div>
   );
 }
