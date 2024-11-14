@@ -28,10 +28,10 @@ function Home() {
           <NewsPanel news={data.sidebar.articles} />
         </div>
         <div className="row-span-2 row-start-4">
-          <HomepageDescription article={data.mainArticle} />
+          <HomepageDescription mainArticle={data.mainArticle} />
         </div>
         <div className="col-span-3 row-span-2 row-start-6">
-          <ArticlePanel />
+          <ArticlePanel articles={data.articles} />
         </div>
       </div>
     </div>

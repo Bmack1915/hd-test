@@ -8,7 +8,7 @@ function NewsPanel({ news }) {
       {news.map((article, index) => (
         <NewsCard
           key={index}
-          border={true}
+          border={index !== news.length - 1}
           title={article.title}
           description={article.description}
         />

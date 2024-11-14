@@ -8,7 +8,7 @@ const useFetchData = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
+    async function fetchData() {
       try {
         setIsLoading(true);
         const result = await getData();
@@ -18,7 +18,7 @@ const useFetchData = () => {
       } finally {
         setIsLoading(false);
       }
-    };
+    }
 
     fetchData();
   }, []);

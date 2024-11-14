@@ -1,9 +1,14 @@
 import "./globals.css";
 import Navigation from "./components/Navigation";
-import { Inter } from "next/font/google";
+import { Abril_Fatface, Inter } from "next/font/google";
 import { DataProvider } from "./DataProvider";
 
 const inter = Inter({ subsets: ["latin"], weights: ["400", "700", "800"] });
+
+// export const abril = Abril_Fatface({
+//   subsets: ["latin"],
+//   weight: "400",
+// });
 
 export const metadata = {
   title: "Create Next App",
@@ -13,7 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className}`}>
         <DataProvider>
           <Navigation />
           {children}

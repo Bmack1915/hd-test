@@ -1,11 +1,11 @@
 import ArticleCard from "./ArticleCard";
 
-function ArticlePanel() {
+function ArticlePanel({ articles }) {
   return (
     <div className="flex justify-between p-5">
-      <ArticleCard />
-      <ArticleCard />
-      <ArticleCard />
+      {articles.map((article, index) => (
+        <ArticleCard key={index} articleId={index} article={article} />
+      ))}
     </div>
   );
 }
