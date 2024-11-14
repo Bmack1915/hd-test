@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useData } from "../DataProvider";
 import { Abril_Fatface } from "next/font/google";
+import { useState } from "react";
 
 const abril = Abril_Fatface({
   subsets: ["latin"],
@@ -9,6 +10,8 @@ const abril = Abril_Fatface({
 });
 
 function Navigation() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const { data, isLoading, error } = useData();
 
   if (isLoading) return <div>Loading...</div>;
@@ -20,7 +23,7 @@ function Navigation() {
       {/* Logo */}
       <h1 className={`${abril.className} text-6xl font-extrabold`}>W.</h1>
 
-      <div className="font-inter flex justify-between space-x-24">
+      <div className="font-inter  flex justify-between space-x-24">
         {data.navItems.map((navItem, index) => (
           <Link
             key={index}
